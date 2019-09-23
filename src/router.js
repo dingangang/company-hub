@@ -25,7 +25,8 @@ export default new Router({
     {
       path: '/xinjiejia',
       name: 'XinJieJia',
-      component: () => import(/* webpackChunkName: "xinjiejia" */ './views/xinjiejia/index.vue')
+      component: () => import(/* webpackChunkName: "xinjiejia" */ './views/xinjiejia/index.vue'),
+      meta: { title: '欣洁家家电清洗' }
     },
     {
       path: '*',

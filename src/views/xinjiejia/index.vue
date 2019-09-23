@@ -7,7 +7,6 @@
         lazy-load
         style="width: 100%"
       />
-      <!--      <img src="@/assets/xinjiejia/home1.jpg" alt="home" style="width: 100%">-->
     </div>
     <div class="text-center mt-medium">
       <van-image
@@ -16,7 +15,22 @@
         lazy-load
         style="width: 100%"
       />
-      <!--      <img src="@/assets/xinjiejia/propaganda.jpg" alt="home" style="width: 100%">-->
+    </div>
+    <div class="text-center mt-medium">
+      <van-image
+        :src="require('@/assets/xinjiejia/propaganda4.jpg')"
+        alt="home"
+        lazy-load
+        style="width: 100%"
+      />
+    </div>
+    <div class="text-center mt-medium">
+      <van-image
+        :src="require('@/assets/xinjiejia/propaganda3.jpg')"
+        alt="home"
+        lazy-load
+        style="width: 100%"
+      />
     </div>
     <div class="text-center mt-medium">
       <van-image
@@ -25,7 +39,6 @@
         lazy-load
         style="width: 100%"
       />
-      <!--      <img src="@/assets/xinjiejia/propaganda2.jpg" alt="home" style="width: 100%">-->
     </div>
     <div class="text-center mt-medium">
       <van-image
@@ -34,23 +47,22 @@
         lazy-load
         style="width: 100%"
       />
-      <!--      <img src="@/assets/xinjiejia/propaganda1.jpg" alt="home" style="width: 100%">-->
     </div>
 
     <div class="text-center mt-medium van-hairline--top pt-medium">
-      <h1 style="font-size: 18px">活动：家电清洗服务免费送</h1>
+      <h1 style="font-size: 18px">家电清洗服务免费送</h1>
       <div class="mt-small text-secondary text-mini">活动时间：即日至2019年10月7日</div>
     </div>
 
     <div class="pb-medium van-hairline--bottom">
       <p class="content-text">
-        欣洁家是一家真正以专业产品、设备、技术为核心运营的公司，是目前同行业中唯一一家拥有6项药剂发明专利的公司，
-        公司清洁剂和清洁设备的研发为基础优势。在家电保洁的基础上，创新发展，以环保的思想发展自己。在家电清洁过程中，
-        我们技术人员可以提供大量实操经验，站在消费者的角度看问题，“以人为本”相互友好合作，团结一致。
+        欣洁家是一家专业化的清洗加盟公司，采用自主研发的专业材料，高科技的先进设备。技术工人都通过培训部门的专业清洁培训，
+        有由国资委颁发的专业技能证书，具有专业的质量水准。家电清洗项目有:冰箱，洗衣机，空调，抽油烟机，自来水管，燃气热水器，
+        电热水器，大型抽油烟机及大型中央空调的清洗。家政服务有新房的开荒保洁，日常的家居保洁，家具护理等服务。
+        欣洁家家政的服务宗旨是:用心，专业，高效，为您提供优质的服务。
       </p>
-      <p class="content-text" />
       <p class="content-text">
-        即日起转发本页面到微信朋友圈，集满38个赞，凭截图即可领取欣洁家家电(冰箱/电视/洗衣机三选一)清洗机会一次。
+        即日起 转发本页面到朋友圈，集满28个赞，凭图即可领取欣洁家家电（空调挂机，冰箱，洗衣机三选一）免费清洗一次及99.9元的抽油机清洗服务。
       </p>
       <p class="content-addones">
         注：每个电话号码限一参与一次活动。本活动最终解释权由欣洁家（全国）家政有限公司所有。
@@ -77,6 +89,7 @@
       <div class="steps-box__title">步骤3：集满赞后，联系店家凭集赞截图获取免费家电清洗机会</div>
     </div>
 
+
     <div class="text-center mt-medium">
       <h2>联系电话：<a ref="phone" href="tel:15673304797" class="text-link" style="font-style: italic;text-decoration: underline">15673304797</a> 姚女士</h2>
       <van-button type="info" class="mt-small" @click="startCall">拨打电话</van-button>
@@ -95,7 +108,7 @@ export default {
   name: 'XinJieJia',
   data() {
     return {
-      content: '欣洁家家电清洗。家电清洗免费送。分享本页到朋友圈，集满38个赞，凭截图，获取免费（电视/冰箱/空调）清洗服务一次。'
+      content: '欣洁家，家电清洗免费送！！ 集满28个赞，凭图即可领取欣洁家家电（空调挂机，冰箱，洗衣机三选一）免费清洗一次及99.9元的抽油机清洗服务。'
     }
   },
   methods: {
@@ -124,12 +137,13 @@ export default {
   }
 
   .content-paragraph {
-    padding: 0 10px;
+    padding: 10px 10px 0;
     font-size: 14px;
     text-indent: 2em;
     border: 1px solid #eee;
     border-radius: 8px;
     margin: 20px;
+    line-height: 48px;
   }
 
   .content-queto {

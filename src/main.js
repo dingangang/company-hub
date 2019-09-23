@@ -26,6 +26,14 @@ Vue.use(Lazyload)
 
 mockXHR()
 
+// 动态title
+// router.beforeEach((to, from, next) => {
+//   if (to.meta.title) {
+//     document.title = to.meta.title
+//   }
+//   next()
+// })
+
 new Vue({
   router,
   store,
