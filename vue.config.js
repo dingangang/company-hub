@@ -5,7 +5,7 @@ function resolve(dir) {
   return path.join(__dirname, dir)
 }
 
-const name = '欣洁家家电清洗，集赞即送家电免费清洗' // page title
+const name = '欣洁家家政庆国庆，家电免费清洗啦！' // page title
 const port = 9527 // dev port
 
 // All configuration item explanations can be find in https://cli.vuejs.org/config/

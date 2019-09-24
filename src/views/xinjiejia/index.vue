@@ -2,27 +2,40 @@
   <div class="page">
     <div class="text-center">
       <van-image
-        :src="require('@/assets/xinjiejia/home1.jpg')"
+        :src="require('@/assets/xinjiejia/header.jpg')"
         alt="home"
         lazy-load
         style="width: 100%"
       />
+      <!--    <div class="text-center">-->
+      <!--      <van-image-->
+      <!--        :src="require('@/assets/xinjiejia/home1.jpg')"-->
+      <!--        alt="home"-->
+      <!--        lazy-load-->
+      <!--        style="width: 100%"-->
+      <!--      />-->
+      <!--    </div>-->
+      <!--    <div class="text-center mt-medium">-->
+      <!--      <van-image-->
+      <!--        :src="require('@/assets/xinjiejia/propaganda.jpg')"-->
+      <!--        alt="home"-->
+      <!--        lazy-load-->
+      <!--        style="width: 100%"-->
+      <!--      />-->
+      <!--    </div>-->
+      <!--    <div class="text-center mt-medium">-->
+      <!--      <van-image-->
+      <!--        :src="require('@/assets/xinjiejia/propaganda4.jpg')"-->
+      <!--        alt="home"-->
+      <!--        lazy-load-->
+      <!--        style="width: 100%"-->
+      <!--      />-->
     </div>
     <div class="text-center mt-medium">
-      <van-image
-        :src="require('@/assets/xinjiejia/propaganda.jpg')"
-        alt="home"
-        lazy-load
-        style="width: 100%"
-      />
-    </div>
-    <div class="text-center mt-medium">
-      <van-image
-        :src="require('@/assets/xinjiejia/propaganda4.jpg')"
-        alt="home"
-        lazy-load
-        style="width: 100%"
-      />
+      <p class="content-dashed-box">
+        原价<span class="content-dashed-box__queto">180</span>元的抽油烟机清冼服务，<br>
+        现仅需<span class="content-dashed-box__queto" style="font-size: 42px; vertical-align: -5px">99</span>元
+      </p>
     </div>
     <div class="text-center mt-medium">
       <van-image
@@ -32,14 +45,14 @@
         style="width: 100%"
       />
     </div>
-    <div class="text-center mt-medium">
-      <van-image
-        :src="require('@/assets/xinjiejia/propaganda2.jpg')"
-        alt="home"
-        lazy-load
-        style="width: 100%"
-      />
-    </div>
+    <!--    <div class="text-center mt-medium">-->
+    <!--      <van-image-->
+    <!--        :src="require('@/assets/xinjiejia/propaganda2.jpg')"-->
+    <!--        alt="home"-->
+    <!--        lazy-load-->
+    <!--        style="width: 100%"-->
+    <!--      />-->
+    <!--    </div>-->
     <div class="text-center mt-medium">
       <van-image
         :src="require('@/assets/xinjiejia/propaganda1.jpg')"
@@ -50,8 +63,7 @@
     </div>
 
     <div class="text-center mt-medium van-hairline--top pt-medium">
-      <h1 style="font-size: 18px">家电清洗服务免费送</h1>
-      <div class="mt-small text-secondary text-mini">活动时间：即日至2019年10月7日</div>
+      <h1 style="font-size: 18px">公司简介</h1>
     </div>
 
     <div class="pb-medium van-hairline--bottom">
@@ -62,7 +74,7 @@
         欣洁家家政的服务宗旨是:用心，专业，高效，为您提供优质的服务。
       </p>
       <p class="content-text">
-        即日起 转发本页面到朋友圈，集满28个赞，凭图即可领取欣洁家家电（空调挂机，冰箱，洗衣机三选一）免费清洗一次及99.9元的抽油机清洗服务。
+        即日起 转发本页面到朋友圈，集满28个赞，凭图即可获取一次欣洁家家电（空调挂机，冰箱，洗衣机三选一）免费清洗服务和一次99元的抽油机清洗服务优惠。
       </p>
       <p class="content-addones">
         注：每个电话号码限一参与一次活动。本活动最终解释权由欣洁家（全国）家政有限公司所有。
@@ -89,7 +101,6 @@
       <div class="steps-box__title">步骤3：集满赞后，联系店家凭集赞截图获取免费家电清洗机会</div>
     </div>
 
-
     <div class="text-center mt-medium">
       <h2>联系电话：<a ref="phone" href="tel:15673304797" class="text-link" style="font-style: italic;text-decoration: underline">15673304797</a> 姚女士</h2>
       <van-button type="info" class="mt-small" @click="startCall">拨打电话</van-button>
@@ -108,7 +119,7 @@ export default {
   name: 'XinJieJia',
   data() {
     return {
-      content: '欣洁家，家电清洗免费送！！ 集满28个赞，凭图即可领取欣洁家家电（空调挂机，冰箱，洗衣机三选一）免费清洗一次及99.9元的抽油机清洗服务。'
+      content: '欣洁家，家电清洗免费送！！ 集满28个赞，凭图即可获取一次欣洁家家电（空调挂机，冰箱，洗衣机三选一）免费清洗服务和一次99元的抽油机清洗服务优惠'
     }
   },
   methods: {
@@ -183,6 +194,20 @@ export default {
     &__bd {
       text-align: center;
       padding-bottom: 24px;
+    }
+  }
+  .content-dashed-box {
+    margin: 20px;
+    padding: 20px 0 20px 20px;
+    border: 2px dashed #cd577f;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align: left;
+    line-height: 42px;
+    font-weight: bolder;
+
+    &__queto {
+      color: #cd577f;
     }
   }
 </style>
