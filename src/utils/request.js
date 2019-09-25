@@ -2,12 +2,13 @@ import axios from 'axios'
 // import store from '@/store'
 // import router from '@/router'
 // import { Dialog } from 'vant'
-import { getToken } from '@/utils/auth'
+import { getToken, getcsrfToken } from '@/utils/auth'
 // import qs from 'qs'
 
 // create an axios instance
 const service = axios.create({
-  baseURL: process.env.VUE_APP_BASE_API, // api 的 base_url Mock
+  // baseURL: process.env.VUE_APP_BASE_API, // api 的 base_url Mock
+  baseURL: '/', // api 的 base_url Mock
   withCredentials: true, // 跨域请求时发送 cookies
   timeout: 25000 // request timeout
 })
@@ -21,8 +22,12 @@ service.interceptors.request.use(
     // }
     // 可以在这里给请求头加自定义头部
     const token = getToken()
+    const csrfToken = getcsrfToken()
     if (token) {
       config.headers['X-Token'] = token
+    }
+    if (csrfToken) {
+      config.headers['x-csrf-token'] = csrfToken
     }
     return config
   },

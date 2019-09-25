@@ -115,12 +115,20 @@
 
 <script>
 import Clipboard from 'clipboard'
+import { getSDK } from '@/utils/sdk'
+
 export default {
   name: 'XinJieJia',
   data() {
     return {
       content: '欣洁家，家电清洗免费送！！ 集满28个赞，凭图即可获取一次欣洁家家电（空调挂机，冰箱，洗衣机三选一）免费清洗服务和一次99元的抽油机清洗服务优惠'
     }
+  },
+  created() {
+    const data = {
+      url: location.href.split('#')[0]
+    }
+    getSDK(data)
   },
   methods: {
     copyLink() {

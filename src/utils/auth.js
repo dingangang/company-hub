@@ -14,3 +14,7 @@ export function removeToken() {
   return Cookies.remove(TokenKey)
 }
 
+export function getcsrfToken() {
+  return Cookies.get('csrfToken')
+}
+

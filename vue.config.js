@@ -38,6 +38,11 @@ module.exports = {
         pathRewrite: {
           ['^' + process.env.VUE_APP_BASE_API]: ''
         }
+      },
+      '/weixin': {
+        target: 'https://www.szqiye.club',
+        changeOrigin: true,
+        ws: true
       }
     },
     after: require('./mock/mock-server.js')
