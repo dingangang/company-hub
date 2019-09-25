@@ -9,7 +9,7 @@ import 'vant/lib/index.css'
 import 'vant/lib/icon/local.css'
 import '@/styles/index.scss'
 import dayjs from 'dayjs'
-import { mockXHR } from '../mock'
+// import { mockXHR } from '../mock'
 import './icons' // icon
 import md5 from 'js-md5'
 // import './permission' // permission control
@@ -24,7 +24,7 @@ Vue.config.productionTip = false
 
 Vue.use(Lazyload)
 
-mockXHR()
+// mockXHR()
 
 // 动态title
 // router.beforeEach((to, from, next) => {
