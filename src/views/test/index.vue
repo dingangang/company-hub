@@ -1,35 +1,7 @@
 <template>
   <div class="page">
     <div class="text-center">
-      <van-image
-        :src="require('@/assets/xinjiejia/header.jpg')"
-        alt="home"
-        lazy-load
-        style="width: 100%"
-      />
-      <!--    <div class="text-center">-->
-      <!--      <van-image-->
-      <!--        :src="require('@/assets/xinjiejia/home1.jpg')"-->
-      <!--        alt="home"-->
-      <!--        lazy-load-->
-      <!--        style="width: 100%"-->
-      <!--      />-->
-      <!--    </div>-->
-      <!--    <div class="text-center mt-medium">-->
-      <!--      <van-image-->
-      <!--        :src="require('@/assets/xinjiejia/propaganda.jpg')"-->
-      <!--        alt="home"-->
-      <!--        lazy-load-->
-      <!--        style="width: 100%"-->
-      <!--      />-->
-      <!--    </div>-->
-      <!--    <div class="text-center mt-medium">-->
-      <!--      <van-image-->
-      <!--        :src="require('@/assets/xinjiejia/propaganda4.jpg')"-->
-      <!--        alt="home"-->
-      <!--        lazy-load-->
-      <!--        style="width: 100%"-->
-      <!--      />-->
+      <van-button type="primary" @click="handleScan">扫一扫</van-button>
     </div>
     <div class="text-center mt-medium">
       <p class="content-dashed-box">
@@ -160,6 +132,16 @@ export default {
     },
     startCall() {
       window.location.href = 'tel://15673304797'
+    },
+    handleScan() {
+      this.$wx.scanQRCode({
+        needResult: 0, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+        scanType: ['qrCode', 'barCode'], // 可以指定扫二维码还是一维码，默认二者都有
+        success: function(res) {
+          const result = res.resultStr // 当needResult 为 1 时，扫码返回的结果
+          console.log(result)
+        }
+      })
     }
   }
 }

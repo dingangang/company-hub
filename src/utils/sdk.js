@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import wx from 'weixin-js-sdk'
 import { getConfig } from '@/api/weixin'
 
@@ -9,18 +10,22 @@ export function getSDK(data, updateAppMessageShareData, updateTimelineShareData)
       timestamp: res.timestamp, // 必填，生成签名的时间戳
       nonceStr: res.nonceStr, // 必填，生成签名的随机串
       signature: res.signature, // 必填，签名，见附录1
-      jsApiList: ['scanQRCode',
+      jsApiList: [
+        'scanQRCode',
         'updateTimelineShareData',
-        'updateAppMessageShareData',
-        'onMenuShareAppMessage',
-        'onMenuShareTimeline'
+        'updateAppMessageShareData'
       ] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
     })
 
     wx.ready(function() {
       console.log('微信jdk 成功调用')
+
+      Vue.prototype.$wx = wx
+
+      // 注册分享自定义的信息
       wx.updateAppMessageShareData(updateAppMessageShareData)
 
+      // 注册朋友圈自定义的信息
       wx.updateTimelineShareData(updateTimelineShareData)
     })
 
