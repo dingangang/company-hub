@@ -29,6 +29,12 @@ export default new Router({
       meta: { title: '欣洁家家电清洗' }
     },
     {
+      path: '/test',
+      name: 'Test',
+      component: () => import(/* webpackChunkName: "xinjiejia" */ './views/test/index.vue'),
+      meta: { title: '欣洁家家电清洗' }
+    },
+    {
       path: '*',
       name: 'ErrorPage',
       component: () => import(/* webpackChunkName: "main" */ './views/404.vue')

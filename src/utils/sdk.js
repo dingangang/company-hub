@@ -1,7 +1,7 @@
 import wx from 'weixin-js-sdk'
 import { getConfig } from '@/api/weixin'
 
-export function getSDK(data) {
+export function getSDK(data, updateAppMessageShareData, updateTimelineShareData) {
   getConfig(data).then(res => {
     wx.config({
       debug: false, // 开启调试模式,
@@ -19,24 +19,9 @@ export function getSDK(data) {
 
     wx.ready(function() {
       console.log('微信jdk 成功调用')
-      wx.updateAppMessageShareData({
-        title: '自定义标题',
-        desc: '自定义描述',
-        link: 'https://www.szqiye.club/company-hub/#/xinjiejia',
-        imgUrl: 'https://www.szqiye.club/company-hub/A.jpg',
-        success: function() {
-          // 设置成功
-        }
-      })
+      wx.updateAppMessageShareData(updateAppMessageShareData)
 
-      wx.updateTimelineShareData({
-        title: '自定义标题', // 分享标题
-        link: 'https://www.szqiye.club/company-hub/#/xinjiejia', // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-        imgUrl: 'https://www.szqiye.club/company-hub/A.jpg', // 分享图标
-        success: function() {
-          // 设置成功
-        }
-      })
+      wx.updateTimelineShareData(updateTimelineShareData)
     })
 
     wx.error(function() {
