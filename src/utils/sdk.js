@@ -22,11 +22,15 @@ export function getSDK(data, updateAppMessageShareData, updateTimelineShareData)
 
       Vue.prototype.$wx = wx
 
-      // 注册分享自定义的信息
-      wx.updateAppMessageShareData(updateAppMessageShareData)
+      if (updateAppMessageShareData) {
+        // 注册分享自定义的信息
+        wx.updateAppMessageShareData(updateAppMessageShareData)
+      }
 
-      // 注册朋友圈自定义的信息
-      wx.updateTimelineShareData(updateTimelineShareData)
+      if (updateTimelineShareData) {
+        // 注册朋友圈自定义的信息
+        wx.updateTimelineShareData(updateTimelineShareData)
+      }
     })
 
     wx.error(function() {

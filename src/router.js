@@ -29,6 +29,12 @@ export default new Router({
       meta: { title: '欣洁家家电清洗' }
     },
     {
+      path: '/xinjiejia/details',
+      name: 'XinJieJiaDetails',
+      component: () => import(/* webpackChunkName: "xinjiejia" */ './views/xinjiejia/details.vue'),
+      meta: { title: '客户预约列表' }
+    },
+    {
       path: '/test',
       name: 'Test',
       component: () => import(/* webpackChunkName: "xinjiejia" */ './views/test/index.vue'),

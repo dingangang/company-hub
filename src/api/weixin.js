@@ -18,3 +18,27 @@ export function getUserOauth(params) {
   })
 }
 
+// 添加预约信息
+export function submitBookInfo(data) {
+  return request({
+    url: '/weixin/messages',
+    method: 'post',
+    data
+  })
+}
+
+// 添加预约信息
+export function getBookCustomers() {
+  return request({
+    url: '/weixin/messages',
+    method: 'get'
+  })
+}
+
+// 按电话查询客户
+export function getBookCustomer(params) {
+  return request({
+    url: `/weixin/messages/${params}`,
+    method: 'get'
+  })
+}
