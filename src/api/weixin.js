@@ -42,3 +42,15 @@ export function getBookCustomer(params) {
     method: 'get'
   })
 }
+
+// 上传图片
+export function uploadFile(data) {
+  // return axios.put('/weixin/upload', data, {
+  //   method: 'put'
+  // })
+  return request({
+    url: '/weixin/upload',
+    method: 'put',
+    data
+  })
+}

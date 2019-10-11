@@ -41,6 +41,41 @@ export default new Router({
       meta: { title: '欣洁家家电清洗' }
     },
     {
+      path: '/shangcheng',
+      name: 'Shangcheng',
+      redirect: '/shangcheng/main',
+      component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/index.vue'),
+      meta: { title: '尚诚整体家居' },
+      children: [
+        {
+          path: 'main',
+          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/main.vue')
+        },
+        {
+          path: 'contact',
+          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/contact.vue')
+        },
+        {
+          path: 'case',
+          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/case.vue')
+        },
+        {
+          path: 'case-details',
+          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/case-details.vue'),
+          meta: {
+            hiddenTabbar: true
+          }
+        },
+        {
+          path: 'upload',
+          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/upload.vue'),
+          meta: {
+            hiddenTabbar: true
+          }
+        }
+      ]
+    },
+    {
       path: '*',
       name: 'ErrorPage',
       component: () => import(/* webpackChunkName: "main" */ './views/404.vue')
