@@ -44,13 +44,18 @@ export function getBookCustomer(params) {
 }
 
 // 上传图片
-export function uploadFile(data) {
-  // return axios.put('/weixin/upload', data, {
-  //   method: 'put'
-  // })
+export function uploadFile(data, query) {
   return request({
-    url: '/weixin/upload',
+    url: `/weixin/upload?${query}`,
     method: 'put',
     data
+  })
+}
+
+// 获取案例列表
+export function getCaseCoverList(query) {
+  return request({
+    url: `/weixin/getCaseCoverList?${query}`,
+    method: 'get'
   })
 }

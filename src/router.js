@@ -45,32 +45,36 @@ export default new Router({
       name: 'Shangcheng',
       redirect: '/shangcheng/main',
       component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/index.vue'),
-      meta: { title: '尚诚整体家居' },
       children: [
         {
           path: 'main',
-          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/main.vue')
+          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/main.vue'),
+          meta: { title: '尚诚整体家居' }
         },
         {
           path: 'contact',
-          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/contact.vue')
+          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/contact.vue'),
+          meta: { title: '尚诚整体家居' }
         },
         {
           path: 'case',
-          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/case.vue')
+          component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/case.vue'),
+          meta: { title: '尚诚整体家居' }
         },
         {
           path: 'case-details',
           component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/case-details.vue'),
           meta: {
-            hiddenTabbar: true
+            hiddenTabbar: true,
+            title: '尚诚整体家居'
           }
         },
         {
           path: 'upload',
           component: () => import(/* webpackChunkName: "shangcheng" */ './views/shangcheng/upload.vue'),
           meta: {
-            hiddenTabbar: true
+            hiddenTabbar: true,
+            title: '尚诚整体家居'
           }
         }
       ]

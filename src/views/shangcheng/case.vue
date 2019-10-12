@@ -3,28 +3,40 @@
     <div class="c-title">精品案例</div>
 
     <van-grid :column-num="2">
-      <van-grid-item @click="goDetails">
-        <van-image src="/company-hub/static/shangcheng/covers/cover1.jpg" />
-        <span class="c-desc">2-40X 简约时尚风 （浅灰、纯白+间色）</span>
+      <van-grid-item v-for="(item, index) in caseList" :key="index" @click="goDetails">
+        <van-image :src="item.cover_path" />
+        <span class="c-desc">{{ item.desc }}</span>
       </van-grid-item>
-      <van-grid-item
-        v-for="value in 5"
-        :key="value"
-        icon="photo-o"
-        text="文字"
-      />
     </van-grid>
   </div>
 </template>
 
 <script>
+import { getCaseCoverList } from '@/api/weixin'
+import qs from 'qs'
+
 export default {
   name: 'ShangchengCase',
+  data() {
+    return {
+      caseList: []
+    }
+  },
+  created() {
+    const query = {
+      limit: 20,
+      offset: 0
+    }
+    getCaseCoverList(qs.stringify(query)).then(res => {
+      console.log('res', res)
+      this.caseList = res
+    })
+  },
   methods: {
     goDetails() {
       this.$router.push('case-details')
     }
-  },
+  }
 }
 </script>
 

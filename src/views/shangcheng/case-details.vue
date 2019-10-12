@@ -10,7 +10,7 @@
       <ul>
         <li v-for="item in 7" :key="item" class="mb-small">
           <img
-            :src="`/company-hub/static/shangcheng/cs101/${item}.jpg`"
+            :src="`/company-hub/customer/shangcheng/cs101/${item}.jpg`"
             alt="1"
             style="width: 100%"
             lazy-load
