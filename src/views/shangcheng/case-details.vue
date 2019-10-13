@@ -8,9 +8,9 @@
     />
     <div style="padding-top: 50px">
       <ul>
-        <li v-for="item in 7" :key="item" class="mb-small">
+        <li v-for="item in images_list" :key="item.id" class="mb-small">
           <img
-            :src="`/company-hub/customer/shangcheng/cs101/${item}.jpg`"
+            :src="`${item.base_url}${item.case_id}/${item.filename}`"
             alt="1"
             style="width: 100%"
             lazy-load
@@ -22,8 +22,31 @@
 </template>
 
 <script>
+import { getCaseDetailsList } from '@/api/weixin'
+import qs from 'qs'
+
 export default {
-  name: 'ShangchengCaseDetails'
+  name: 'ShangchengCaseDetails',
+  created() {
+    const dirname = this.$route.query.dirname
+    const query = {
+      dirname
+    }
+
+    // 根据路由参数拉取详情
+    getCaseDetailsList(qs.stringify(query))
+      .then(res => {
+        console.log('res', res)
+        if (res.code === 200) {
+          this.images_list = res.list
+        }
+      })
+  },
+  data() {
+    return {
+      images_list: []
+    }
+  },
 }
 </script>
 

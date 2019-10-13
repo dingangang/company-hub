@@ -59,3 +59,11 @@ export function getCaseCoverList(query) {
     method: 'get'
   })
 }
+
+// 获取案例详情图片列表
+export function getCaseDetailsList(query) {
+  return request({
+    url: `/weixin/getCaseDetailsList?${query}`,
+    method: 'get'
+  })
+}

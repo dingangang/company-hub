@@ -24,6 +24,19 @@
       </van-cell-group>
     </van-cell-group>
     <div class="mt-tiny p-tiny">
+      <div class="mb-step">
+        <label>上传封面</label>
+      </div>
+      <van-uploader
+        v-model="caseCover"
+        :after-read="afterReadCover"
+        :max-count="1"
+      />
+    </div>
+    <div class="mt-tiny p-tiny">
+      <div class="mb-step">
+        <label>上传详情图片</label>
+      </div>
       <van-uploader
         v-model="fileList"
         :after-read="afterRead"
@@ -53,11 +66,18 @@ export default {
         desc: ''
       },
       fileList: [],
+      caseCover: [],
       formData: new FormData(),
       isUploading: false
     }
   },
   methods: {
+    // 读取封面文件
+    afterReadCover(file) {
+      console.log(file)
+      this.formData.append('cover', file.file)
+    },
+    // 上传内容文件
     afterRead(file) {
       console.log(file)
       // 判定是单个文件读取还是多个

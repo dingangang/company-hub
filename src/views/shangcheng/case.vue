@@ -3,8 +3,8 @@
     <div class="c-title">精品案例</div>
 
     <van-grid :column-num="2">
-      <van-grid-item v-for="(item, index) in caseList" :key="index" @click="goDetails">
-        <van-image :src="item.cover_path" />
+      <van-grid-item v-for="(item, index) in caseList" :key="index" @click="goDetails(item.dirname)">
+        <van-image class="ct-image" :src="item.cover_path" />
         <span class="c-desc">{{ item.desc }}</span>
       </van-grid-item>
     </van-grid>
@@ -33,8 +33,8 @@ export default {
     })
   },
   methods: {
-    goDetails() {
-      this.$router.push('case-details')
+    goDetails(dirname) {
+      this.$router.push(`case-details?dirname=${dirname}`)
     }
   }
 }
